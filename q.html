@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>同心圆</title>
+</head>
+<body>
+	<style>
+		div{
+			border-radius: 50%;
+		}
+		.dv1{
+			width: 700px;
+			height: 700px;
+			background: #2bf666;
+			position: absolute;
+			left: 0px;
+			right: 0px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.dv2{
+			width: 640px;
+			height: 640px;
+			background: #00FFC4;
+			position: absolute;
+			left: 30px;
+			top:30px;
+		}
+		.dv3{
+			width: 580px;
+			height: 580px;
+			background: #00FFE3;
+			position: absolute;
+			left: 30px;
+			top:30px;
+		}
+		.dv4{
+			width: 520px;
+			height: 520px;
+			background: #00BFFF;
+			position: absolute;
+			left: 30px;
+			top:30px;
+		}
+		.dv5{
+			width: 460px;
+			height: 460px;
+			background: #0062FF;
+			position: absolute;
+			left: 30px;
+			top:30px;
+		}
+		.dv6{
+			width: 400px;
+			height: 400px;
+			background: #482BF6;
+			position: absolute;
+			left: 30px;
+			top:30px;
+		}
+		.dv7{
+			width: 340px;
+			height: 340px;
+			background: #6200FF;
+			position: absolute;
+			left: 30px;
+			top:30px;
+		}
+		.dv8{
+			width: 280px;
+			height: 280px;
+			background: #BF00FF;
+			position: absolute;
+			left: 30px;
+			top:30px;
+		}
+		.dv9{
+			width: 220px;
+			height: 220px;
+			background: #FE7BFF;
+			position: absolute;
+			left: 30px;
+			top:30px;
+		}
+		.dv0{
+			width: 160px;
+			height: 160px;
+			background: #FF00B4;
+			position: absolute;
+			left: 30px;
+			top:30px;
+		}
+		.dv02{
+			width: 100px;
+			height: 100px;
+			background: #FF0058;
+			position: absolute;
+			left: 30px;
+			top:30px;
+		}
+		.dv01{
+			width: 60PX;
+			height: 60PX;
+			background: #FF0000;
+			position: absolute;
+			left: 20PX;
+			top:20PX;
+		}
+		.dv03{
+			width: 25PX;
+			height: 25PX;
+			background: #FF0000;
+			position: absolute;
+			left: 17.5PX;
+			top: 17.5PX;
+		}
+		textarea{
+			display:none;
+		}
+		.btn{display:none;}
+	</style>
+	<div class="dv1">
+		<div class="dv2">
+			<div class="dv3">
+				<div class="dv4">
+					<div class="dv5">
+						<div class="dv6">
+							<div class="dv7">
+								<div class="dv8">
+									<div class="dv9">
+										<div class="dv0">
+											<div class="dv02">
+												<div class="dv01">
+													<div class="dv03"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		setInterval(function(){
+			var divs = document.getElementsByTagName('div');
+			for (var i = 0; i < divs.length; i++) {
+				// console.log(divs[i]);
+				// console.log('rgb('+rand(0,255)+','+rand(0,255)+','+rand(0,255)+')');
+				divs[i].style.backgroundColor = 'rgb('+rand(0,255)+','+rand(0,255)+','+rand(0,255)+')';
+			}
+		},123)
+		function rand(m,n){
+
+			return Math.ceil(Math.random()*(n-m+1))+(m-1);
+		}
+	</script>
+</body>
+</html>
