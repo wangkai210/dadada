@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标拖动</title>
+	<style>
+		*{margin: 0px;padding: 0px;}
+		#dvs{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background: #2bf666;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="dvs"></div>
+	<select name="" id="city"></select>
+	<select name="" id="area"></select>
+	<script>
+		var city = document.getElementById('city');
+		var area = document.getElementById('area');
+		var c = ['北京市','河北省','陕西省','山西省'];
+		var ar = [['北京1','北京2','北京3'],['河北1','河北2','河北3'],['陕西1','陕西2','陕西3'],['山西1','山西2','山西3']];
+		for (var i = 0; i < c.length; i++) {
+			city.innerHTML += '<option value='+i+'>'+c[i]+'</option>';
+		}
+		city.onchange = function() {
+			var vl = this.value;
+			var ars = ar[vl];
+			area.innerHTML = '';
+			for (var i = 0; i < ars.length; i++) {
+				area.innerHTML += '<option value='+i+'>'+ars[i]+'</option>'
+			}
+		}
+		var dvs = document.getElementById('dvs');
+		dvs.onmousedown = function(e) {
+			var x = e.clientX;
+			var y = e.clientY;
+			var l = dvs.offsetLeft;
+			var t = dvs.offsetTop;
+			var ls = x-l;
+			var ts = y-t;
+			window.onmousemove = function(es) {
+				var xs = es.clientX;
+				var ys = es.clientY;
+				var nl = xs-ls;
+				var nt = ys-ts;
+				dvs.style.left = nl+'px';
+				dvs.style.top = nt+'px';
+			}
+		}
+		dvs.onmouseup = function() {
+			window.onmousemove = null;
+		}
+		window.onkeydown = function (ee) {
+			var code = ee.keyCode;
+			switch (code) {
+				case 38:
+					var t = dvs.offsetTop;
+					var nt = t-10;
+					dvs.style.top = nt+'px';
+					break;
+				case 40:
+					var t = dvs.offsetTop;
+					var nt = t+10;
+					dvs.style.top = nt+'px';
+					break;
+				case 37:
+					var l = dvs.offsetLeft;
+					var nl = l-10;
+					dvs.style.left = nl+'px';
+					break;
+				case 39:
+					var l = dvs.offsetLeft;
+					var nl = l+10;
+					dvs.style.left = nl+'px';
+					break;
+			}
+		}
+		dvs.onmouseover = function() {
+			// console.log(1);
+			dvs.style.background = 'url(./1.gif)';
+		}
+		dvs.onmouseout = function() {
+			dvs.style.background = '#2bf666';
+		}
+	</script>
+</body>
+</html>
